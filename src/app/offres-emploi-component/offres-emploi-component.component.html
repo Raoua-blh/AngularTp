@@ -1,7 +1,16 @@
 <p>offres-emploi-component works!</p>
-<button (click)="OffreDispo()">Bilan</button>
+<div>
+  <!--
+    <input type="text" [(ngModel)]="searchValue" (ngModelChange)="filterEmploi(searchValue)">
+  -->  
+  Filter : <input type="text" placeholder=" what you are searching for" [(ngModel)]="searchValue">
+
+</div>
+<button (click)="OffreDispo()"> Bilan </button>
+<p>{{nbroffreDispo}}</p>
 <div *ngFor="let emploi of listeEmploi">
     <h2>{{ emploi.titre }}</h2>
     <p>{{ emploi.reference }}</p>
     <button [disabled]="!emploi.etat">Postuler</button>
   </div>
+   
