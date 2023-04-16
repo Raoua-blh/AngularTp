@@ -1,0 +1,9 @@
+<p>offres-emploi-component works!</p>
+<button (click)="OffreDispo()">Bilan</button>
+<div *ngFor="let emploi of listeEmploi">
+    <h2>{{ emploi.titre }}</h2>
+    <p>{{ emploi.entreprise }}</p>
+    <p>{{ emploi.etat }}</p>
+    <p>{{ emploi.reference }}</p>
+    <button [disabled]="!emploi.etat">Postuler</button>
+  </div>
