@@ -1,0 +1,72 @@
+
+<h1 class="text-success"> {{ titre }} </h1>
+<div>
+    <label>Total articles displayed in each boucle : </label>
+    <input type="text" [value]="totalArticlesDisplayed" disabled />
+  </div>
+
+  <input type="text" [(ngModel)]="totalArticlesDisplayed">
+  <div *ngIf="isDisplayedValid()">  la valeur est Inferieur ou égale au nbr total </div>  
+  <div *ngIf="!isDisplayedValid()">  la valeur est Superieur au nbr total  </div>  
+
+
+  <ul>
+    <div *ngFor="let article of listeArticles"  >
+        <div class="card border-dark  mb-3" style="max-width: 18rem;">
+            <div class="card-header"> <p>{{ article.titre }}</p></div>
+            <div class="card-body text-dark">
+              <p class="card-text"><strong>Auteur:</strong> {{ article.auteur }}</p>   
+              <p class="card-text"><strong>Date:</strong> {{ article.date | date }}</p> 
+              <p class="card-text"><strong>Description :</strong> {{ article.contenu }}</p>
+              <p class="card-text"><strong>Catégorie:</strong> {{ article.categorie }}</p>
+      
+        
+              
+            </div>
+          </div>
+        </div>
+            </ul>
+          
+          <ul>
+            <p class="text-primary">Question 6 without Trvail with ngIf</p>
+
+          <div *ngFor="let article of listeArticles">
+            <div *ngIf="article.categorie !== 'Travail'">
+                <div class="card border-dark  mb-3" style="max-width: 18rem;">
+                    <div class="card-header"> <p>{{ article.titre }}</p></div>
+                    <div class="card-body text-dark">
+                        <p class="card-text"><strong>Auteur:</strong> {{ article.auteur }}</p>   
+                        <p class="card-text"><strong>Date:</strong> {{ article.date | date }}</p> 
+                        <p class="card-text"><strong>Description :</strong> {{ article.contenu }}</p>
+                        <p class="card-text"><strong>Catégorie:</strong> {{ article.categorie }}</p>
+            </div>
+        </div>
+         </div>
+        </div>
+     
+        
+        </ul>
+
+     
+        <ul>
+            
+            <p class="text-primary">Question 7 </p>
+            <div *ngFor="let article of listeArticles"  [style.color]="article.categorie === 'Education' ? 'blue' : 'black'">
+                <div class="card border-dark  mb-3" style="max-width: 18rem;">
+                    <div class="card-header"> <p>{{ article.titre }}</p></div>
+                    <div class="card-body text-dark">
+                      <p class="card-text"><strong>Auteur:</strong> {{ article.auteur }}</p>   
+                      <p class="card-text"><strong>Date:</strong> {{ article.date | date }}</p> 
+                      <p class="card-text"><strong>Description :</strong> {{ article.contenu }}</p>
+                      <p class="card-text"><strong>Catégorie:</strong> {{ article.categorie }}</p>
+              
+                
+                      
+                    </div>
+                  </div>
+                </div>
+                    </ul>
+                  
+        
+   
+ 
